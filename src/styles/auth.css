@@ -3,6 +3,7 @@
     margin: 0 auto;
     padding-bottom: 15px;
     border: 1px solid rgba(149, 160, 167, 1);
+    background-color: wheat;
     box-sizing: border-box;
     border-radius: 8px;
     display: flex;
@@ -51,7 +52,7 @@
     cursor: pointer;
 }
 .form-submit:hover{
-    background-color: #ffb951;
+    background-color: #4274fc;
 }
 .form-query{
     text-align: center;

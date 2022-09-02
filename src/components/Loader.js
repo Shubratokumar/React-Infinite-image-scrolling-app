@@ -52,7 +52,7 @@ text-align: center;
   height: 200px;
   display: inline-block;
   overflow: hidden;
-  background: #fff;
+  background: inherit;
 }
 .ldio-mr3gmr920vk {
   width: 100%;

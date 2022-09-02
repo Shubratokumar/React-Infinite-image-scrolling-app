@@ -14,6 +14,7 @@ const Headeing = styled(Grid)(({theme})=>({
     fontWeight: 700,
     [theme.breakpoints.down('md')] : {
         padding: '15px 5px',
+        fontWeight: 600
     }
 }))
 
