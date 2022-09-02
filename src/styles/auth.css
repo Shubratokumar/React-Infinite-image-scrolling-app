@@ -1,5 +1,5 @@
 .form-container{
-    width: 600px;
+    width: 550px;
     margin: 0 auto;
     padding-bottom: 15px;
     border: 1px solid rgba(149, 160, 167, 1);
@@ -30,7 +30,7 @@
     margin-bottom: 9px;
 }
 .input-group input{
-    width: 415px;
+    width: 385px;
     height: 55px;
     font-size: 24px;
     border: 1px solid #95A0A7;
@@ -39,7 +39,7 @@
     padding: 9px;   
 }
 .form-submit{
-    width: 415px;
+    width: 385px;
     height: 55px;
     background-color: rgba(255, 153, 0, 0.3);
     color: rgba(14, 22, 26, 1);
@@ -61,20 +61,4 @@
 .form-link{
     color: #FF9900;
     text-decoration: none;
-}
-.line-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 40px 0;
-}
-.line-container p{
-    padding: 0 22px;
-    font-size: 17px;
-    color: #95A0A7;   
-}
-.line{
-    height: 0;
-    width: 145px;
-    border-bottom: 2px solid #95A0A7;
 }

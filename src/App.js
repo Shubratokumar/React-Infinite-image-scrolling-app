@@ -1,21 +1,21 @@
-import { Home } from "@mui/icons-material";
-import { Route, Routes } from "react-router";
+import { Route, Routes, Navigate } from "react-router";
 import Login from './components/Auth/Login';
 import RequireAuth from './components/Auth/RequireAuth';
 import Register from './components/Auth/Register';
+import Home from './components/Home';
 
 
 function App() {
   return (
     <Routes>
-      <Route path="/" 
+      <Route path="/home" 
         element={
           <RequireAuth>
             <Home />
           </RequireAuth>
         } 
         />
-      <Route path="/home" element={<Home />} />
+      <Route path="/" element={<Navigate to='/home'/>} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
     </Routes>
