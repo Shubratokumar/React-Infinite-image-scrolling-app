@@ -1,42 +1,50 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
-import styled from 'styled-components';
 import axios from 'axios';
 import User from './User';
-
-
-const UserWrapper = styled.section`
-    max-width: 1280px;
-    margin: 60px auto;
-    display: grid;
-    grid-gap: 1.5rem;
-    grid-template-columns: repeat(3, 1fr);
-`;
+import InfiniteScroll from 'react-infinite-scroll-component';
+import Loader from './Loader';
+import "../styles/home.css"
 
 
 const Home = () => {
     const [ users, setUsers ] = useState([]);
+    const [ count, setCount ] = useState(20);
 
-    useEffect(() => {
-        fetchImages()
-    }, []);
-
-
-    const fetchImages = async() =>{
-        const url = `https://randomuser.me/api/?results=500`;
+    const fetchUsers = async() =>{
+        const url = `https://randomuser.me/api/?results=${count}`;
         await axios.get(`${url}`)
         .then(res => setUsers(res?.data?.results))
+        .catch((error) => console.log(error));
+        setCount(count + 20 )
     }
+    useEffect(() => {
+        fetchUsers(count)            
+        setTimeout(() => {
+            setCount( count + 20 )
+        }, 1000);
+    }, [count]);
+
+
+    
     return (
         <section>
             <Header />
-            <UserWrapper>
-                {
-                    users.map((user, index )=> (
-                        <User user={user} key={index}/>
-                    ))
-                }
-            </UserWrapper>
+            <InfiniteScroll
+                dataLength={users.length}
+                next={fetchUsers}
+                hasMore={true}
+                loader={<Loader />}
+                scrollThreshold= {0.9}
+            >
+                <section className="userwrapper">
+                    {
+                        users.map((user, index )=> (
+                            <User user={user} key={index}/>
+                        ))
+                    }
+                </section>
+            </InfiniteScroll>
         </section>
     );
 };

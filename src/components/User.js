@@ -1,10 +1,11 @@
 import { Avatar, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material';
 import React from 'react';
+import "../styles/user.css";
 
 const User = ({user}) => {
     const { email, name, phone, picture, location } = user;
     return (
-        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+        <List className='user-card' sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
             <ListItem alignItems="flex-start">
                 <ListItemAvatar>
                     <Avatar src={picture?.medium} alt="user-img" />
@@ -50,7 +51,7 @@ const User = ({user}) => {
                 }
                 />       
             </ListItem>        
-    </List>
+        </List>
     );
 };
 
