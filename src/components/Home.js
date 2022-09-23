@@ -4,7 +4,7 @@ import axios from 'axios';
 import User from './User';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Loader from './Loader';
-import "../styles/home.css"
+import "../styles/home.css";
 
 
 const Home = () => {
